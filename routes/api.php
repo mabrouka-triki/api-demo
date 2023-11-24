@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProduitsController;
@@ -21,3 +22,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/produits', [ProduitsController::class, "liste"]);
 Route::get('/produits/{id}', [ProduitsController::class, "detail"]);
 Route::post('/ajoutcommande', [CommandesController::class, "ajoutercommande"]);
+
+Route::get('/clients', [ClientsController::class, "liste"]);
+Route::get('/clients/{id}', [ClientsController::class, "detail"]);
+
+
+
+
+Route::get('/commande/{id}', [CommandesController::class, "commandesClient"]);
+
+Route::delete('/commande/{idCommande}', [CommandesController::class, "supprimerCommande"]);
+
