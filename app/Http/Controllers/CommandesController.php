@@ -20,5 +20,4 @@ class CommandesController extends Controller
 
         return response()->json(['status' => "Commande ajoutée", 'data' => $commande]);
     }
-
 }
